@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-block2',
-  templateUrl: './block2.component.html',
-  styleUrls: ['./block2.component.css']
+  templateUrl: './block2.component.html'
 })
-export class Block2Component implements OnInit {
+export class Block2Component implements OnInit, OnDestroy {
+  private id: number;
+  private queryParamsSub: Subscription;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.queryParamsSub = this.route.queryParams.subscribe(params => {
+      this.id = params['id'] || 0;
+    });
   }
 
+  ngOnDestroy() {
+    this.queryParamsSub.unsubscribe();
+    console.log('Block 2 destroyed.');
+  }
 }
