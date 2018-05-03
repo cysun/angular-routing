@@ -4,5 +4,11 @@
   <li><a routerLink="block1/2">Block 1 (block1/2)</a></li>
   <li><a routerLink="block2">Block 2 (no query params)</a></li>
   <li><a routerLink="block2" [queryParams]="{id: 1}">Block 2 ([queryParams]=id:1)</a></li>
+  <li><a routerLink="block3">Block 3</a></li>
+  <li><a routerLink="block3/block4">Block 3 / Block 4</a></li>
+  <li><a routerLink="block3/block5">Block 3 / Block 5</a></li>
+  <li><a [routerLink]="[{outlets: {outlet2: ['block6']}}]">Block 6</a></li>
+  <li><a routerLink="blockX">Block X</a></li>
 </ul>
 <router-outlet></router-outlet>
+<router-outlet name="outlet2"></router-outlet>
