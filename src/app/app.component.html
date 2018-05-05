@@ -1,6 +1,7 @@
 <ul>
   <li><a routerLink="block1">Block 1 (no route params)</a></li>
   <li><a [routerLink]="['block1', 1]">Block 1 (['block1', 1])</a></li>
+  <li><a [routerLink]="['block1', {x:10, y:20}]">Block 1 with matrix parameters</a></li>
   <li><a routerLink="block1/2">Block 1 (block1/2)</a></li>
   <li><a routerLink="block2">Block 2 (no query params)</a></li>
   <li><a routerLink="block2" [queryParams]="{id: 1}">Block 2 ([queryParams]=id:1)</a></li>

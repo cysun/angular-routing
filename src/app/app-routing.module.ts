@@ -25,6 +25,12 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    {
+      provide: 'APP_URL',
+      useValue: 'http://localhost:4200'
+    }
+  ]
 })
 export class AppRoutingModule {}
