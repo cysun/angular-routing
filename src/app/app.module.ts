@@ -10,6 +10,8 @@ import { Block3Component } from './block3/block3.component';
 import { Block4Component } from './block4/block4.component';
 import { Block5Component } from './block5/block5.component';
 import { Block6Component } from './block6/block6.component';
+import { Block7Component } from './block7/block7.component';
+import { CanActivateGuard } from './can-activate.guard';
 
 
 @NgModule({
@@ -20,13 +22,14 @@ import { Block6Component } from './block6/block6.component';
     Block3Component,
     Block4Component,
     Block5Component,
-    Block6Component
+    Block6Component,
+    Block7Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CanActivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
